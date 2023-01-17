@@ -609,7 +609,7 @@ impl WindowsResource {
         }
 
         println!("cargo:rustc-link-search=native={}", output_dir);
-        println!("cargo:rustc-link-lib=static=resource");
+        println!("cargo:rustc-link-lib=static:-bundle,+whole-archive=resource");
 
         Ok(())
     }
